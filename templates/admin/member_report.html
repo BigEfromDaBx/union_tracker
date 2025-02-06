@@ -1,0 +1,8 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<p>Active Members: {{ active_members }}</p>
+<p>Inactive Members: {{ inactive_members }}</p>
+<a href="{% url 'admin:index' %}">Back to Admin Dashboard</a>
+{% endblock %}

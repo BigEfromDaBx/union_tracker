@@ -1,0 +1,45 @@
+{% extends 'base_layout.html' %} {% block content %}
+<!-- Page Heading -->
+<h1 class="h3 mb-4 text-gray-800">
+  Member Profile: {{ member.first_name }} {{ member.last_name }}
+</h1>
+
+<!-- Member Details -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Contact Information</h6>
+  </div>
+  <div class="card-body">
+    <p><strong>Email:</strong> {{ member.email }}</p>
+    <p><strong>Phone Number:</strong> {{ member.phone }}</p>
+    <p><strong>Status:</strong> {{ member.status|yesno:"Active,Inactive" }}</p>
+    <!-- Add more fields as needed -->
+  </div>
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Address Details</h6>
+      </div>
+    <div class="card-body">
+      <p><strong>Address:</strong> {{ member.address }}</p>
+      <p><strong>Address (Line 2):</strong> {{ member.address2 }}</p>
+      <p><strong>City:</strong> {{ member.city }}</p>
+      <p><strong>State:</strong> {{ member.state }}</p>
+      <p><strong>Zip Code:</strong> {{ member.zip_code }}</p>
+      <!-- Add more fields as needed -->
+    </div>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Social Security Number</h6>
+          </div>
+        <div class="card-body">
+          <p><strong>Social Security Number:</strong> {{ member.ssn }}</p>
+          <!-- Add more fields as needed -->
+        </div>
+</div>
+
+  <!-- Back to Members List -->
+  <a href="{% url 'member_list' %}" class="btn btn-secondary"
+    >Back to Members List</a
+  >
+  {% endblock %}
+</div>
